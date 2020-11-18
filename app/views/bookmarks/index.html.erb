@@ -16,14 +16,6 @@
 
     <form action="/insert_bookmark" method="post">
       <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
-      </div>
-
-      <div>
         <label for="movie_id_box">
           Movie
         </label>
@@ -44,14 +36,6 @@
     <table>
       <tr>
         <th>
-          ID
-        </th>
-
-        <th>
-          User
-        </th>
-
-        <th>
           Movie
         </th>
 
@@ -70,15 +54,9 @@
       <% @list_of_bookmarks.each do |a_bookmark| %>
       <tr>
         <td>
-          <%= a_bookmark.id %>
-        </td>
-
-        <td>
-          <%= a_bookmark.user_id %>
-        </td>
-
-        <td>
-          <%= a_bookmark.movie_id %>
+          <a href="/movies/<%=  a_bookmark.movie.id %>">
+            <%=  a_bookmark.movie.title %>
+          </a>        
         </td>
 
         <td>
